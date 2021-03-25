@@ -1,0 +1,4 @@
+ENV_VARS = {
+    'COINBASE_API_KEY': '',
+    'COINBASE_API_KEY_SECRET': '',
+}
