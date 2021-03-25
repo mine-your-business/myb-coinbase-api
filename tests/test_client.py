@@ -14,7 +14,19 @@ def client():
     return CoinbaseApi(
         api_url="https://api.coinbase.com",
         verbose=True
-    )
+    )    
+
+# A bit hacky but fullfills the need of allowing for code 
+# to be run before (or after) each test
+@pytest.fixture(autouse=True)
+def run_around_tests():
+    # Delay at the start of each test because apparently
+    # the public request endpoints may require a CAPTCHA
+    # if you make requests too quickly
+    time.sleep(0.1)
+    # A test function will be run at this point
+    yield
+    # Code that will run after each test
 
 
 # @pytest.fixture(scope='module')
