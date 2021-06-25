@@ -98,3 +98,12 @@ class TestClient(object):
 #         accounts = authed_client.list_accounts()
 
 #         assert accounts is not None
+    
+#     def test_get_next_page_accounts(self, authed_client):
+#         accounts = authed_client.list_accounts()
+#         assert accounts is not None
+#         assert accounts.get('pagination') is not None
+#         assert accounts['pagination'].get('next_uri') is not None
+
+#         next_page_accounts = authed_client.get_next_page(accounts['pagination']['next_uri'])
+#         assert next_page_accounts is not None

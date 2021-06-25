@@ -83,8 +83,16 @@ class CoinbaseApi:
             params=params)
         return SpotPrice(price)
 
-    # # Requires auth; scopes:
-    # #   wallet:accounts:read
-    # #
-    # def list_accounts(self):
-    #     return self._request('GET', '/v2/accounts')
+    # Requires auth; scopes:
+    #   wallet:accounts:read
+    #
+    def list_accounts(self):
+        return self._request('GET', '/v2/accounts')
+
+    # next_uri should be something in the response body of a list request
+    def get_next_page(self, next_uri):
+        return self._request('GET', next_uri)
+
+    # previous_uri should be something in the response body of a list request
+    def get_previous_page(self, previous_uri):
+        return self._request('GET', previous_uri)
