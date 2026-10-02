@@ -1,4 +1,8 @@
 # myb-coinbase-api
+
+> [!NOTE]
+> **Archived.** No longer maintained.
+
  An API client for the Coinbase API
 
 ## Installation
